@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: grpcio-testing
+Version: 1.65.4
+Summary: Testing utilities for gRPC Python
+Home-page: https://grpc.io
+Author: The gRPC Authors
+Author-email: grpc-io@googlegroups.com
+License: Apache License 2.0
+License-File: LICENSE
+Requires-Dist: protobuf <6.0dev,>=5.26.1
+Requires-Dist: grpcio >=1.65.4
+
+gRPC Python Testing Package
+===========================
+
+Testing utilities for gRPC Python
+
+Supported Python Versions
+-------------------------
+Python >= 3.8
+
+Dependencies
+------------
+
+Depends on the `grpcio` package, available from PyPI via `pip install grpcio`.
+

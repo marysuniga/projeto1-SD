@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option java_package = "com.firstproject.grpc";
+
+package messenger;
+
+service Messenger {
+    rpc GetChannels(Empty) returns (ChannelList);
+    rpc GetChannelInfo(ChannelRequest) returns (ChannelInfo);
+    rpc ReceiveMessage(ChannelRequest) returns (MessageResponse); // Unary
+    rpc StreamMessages(ChannelRequest) returns (stream MessageResponse); // Streaming
+    rpc PostMessage(MessageRequest) returns (Empty);
+}
+
+enum ChannelType {
+    UNARY = 0;
+    STREAMING = 1;
+}
+
+message ChannelRequest {
+    string channel = 1;
+}
+
+message ChannelInfo {
+    string name = 1;
+    ChannelType type = 2;
+}
+
+message ChannelList {
+    repeated string channels = 1;
+}
+
+message MessageRequest {
+    string channel = 1;
+    string message = 2;
+}
+
+message MessageResponse {
+    string message = 1;
+}
+
+message Empty {}
+
